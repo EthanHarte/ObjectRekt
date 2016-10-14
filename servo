@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+
+import pigpio
+import time
+
+def main():
+	# ANGLE * 10 + 600 = PULSEWIDTH
+	# PULSEWIDTH = 600 TO 2400
+	pi = pigpio.pi()
+	pi.set_servo_pulsewidth(18, 1500)
+	
+	# No need to add delay (pigpio does it??)	
+	#time.sleep(.1)
+	
+	pi.set_servo_pulsewidth(4, 1500)
+
+        pi.stop()
+
+main()
